@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>User CRUD Operations</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 CRUD Operations</h1>
+        
+        <!-- Create User Section -->
+        <div class="section">
+            <h2>➕ Create New User</h2>
+            <form id="createUserForm">
+                <div class="form-group">
+                    <label for="createName">Name:</label>
+                    <input type="text" id="createName" required>
+                </div>
+                <div class="form-group">
+                    <label for="createEmail">Email:</label>
+                    <input type="email" id="createEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="createAge">Age:</label>
+                    <input type="number" id="createAge" required>
+                </div>
+                <button type="submit">Create User</button>
+            </form>
+            <div id="createResponse" class="response" style="display: none;"></div>
+        </div>
+
+        <!-- Get All Users Section -->
+        <div class="section">
+            <h2>👥 All Users</h2>
+            <button onclick="getAllUsers()">Load All Users</button>
+            <div id="usersList"></div>
+        </div>
+
+        <!-- Get User by ID Section -->
+        <div class="section">
+            <h2>🔍 Get User by ID</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="getUserId">User ID:</label>
+                    <input type="text" id="getUserId" placeholder="Enter user ID">
+                </div>
+                <button onclick="getUserById()">Get User</button>
+            </div>
+            <div id="getUserResponse" class="response" style="display: none;"></div>
+        </div>
+
+        <!-- Update User Section -->
+        <div class="section">
+            <h2>✏️ Update User</h2>
+            <form id="updateUserForm">
+                <div class="form-group">
+                    <label for="updateId">User ID:</label>
+                    <input type="text" id="updateId" required placeholder="Enter user ID to update">
+                </div>
+                <div class="form-group">
+                    <label for="updateName">Name:</label>
+                    <input type="text" id="updateName" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateEmail">Email:</label>
+                    <input type="email" id="updateEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="updateAge">Age:</label>
+                    <input type="number" id="updateAge" required>
+                </div>
+                <button type="submit" class="update-btn">Update User</button>
+            </form>
+            <div id="updateResponse" class="response" style="display: none;"></div>
+        </div>
+
+        <!-- Delete User Section -->
+        <div class="section">
+            <h2>🗑️ Delete User</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="deleteId">User ID:</label>
+                    <input type="text" id="deleteId" placeholder="Enter user ID to delete">
+                </div>
+                <button onclick="deleteUser()" class="delete-btn">Delete User</button>
+            </div>
+            <div id="deleteResponse" class="response" style="display: none;"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
