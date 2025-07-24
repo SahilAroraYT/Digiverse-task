@@ -14,7 +14,7 @@ document.getElementById('createUserForm').addEventListener('submit', async funct
         });
         const data = await response.json();
         const createResponse = document.getElementById('createResponse');
-        createResponse.textContent = `User created with ID: ${data._id}`;
+        createResponse.textContent = `User created successfully`;
         createResponse.style.display = 'block';
      
         document.getElementById('createUserForm').reset();
