@@ -54,7 +54,15 @@ app.get('/users/:id', async (req, res) => {
 
 app.put('/users/:id', async (req, res) => {
   const { name, email, age } = req.body;
-  const updatedUser = await User.findByIdAndUpdate(
+const updatedUser = await User.findByIdAndUpdate(
+    req.params.id,
+    { name, email, age },
+    { new: true }
+  );
+
+  if (!updatedUser) {
+    return res.status(404).json({ error: 'User not found' });
+  }
     req.params.id,
     { name, email, age },
     { new: true }
