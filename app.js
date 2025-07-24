@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.use(express.json());
+app.use(express.static(__dirname));
 
 async function connectDB(){
     await mongoose.connect(process.env.MONGO_DB_DATABASE_STRING);
