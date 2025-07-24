@@ -1,4 +1,3 @@
-
 document.getElementById('createUserForm').addEventListener('submit', async function (e) {
     e.preventDefault();
     const name = document.getElementById('createName').value;
@@ -6,7 +5,7 @@ document.getElementById('createUserForm').addEventListener('submit', async funct
     const age = document.getElementById('createAge').value;
 
     try {
-        const response = await fetch('http://localhost:3000/users', {
+        const response = await fetch('https://digiverse-task.onrender.com/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +25,7 @@ document.getElementById('createUserForm').addEventListener('submit', async funct
 
 async function getAllUsers() {
     try {
-        const response = await fetch('http://localhost:3000/users');
+        const response = await fetch('https://digiverse-task.onrender.com/users');
         const users = await response.json();
         const usersList = document.getElementById('usersList');
         usersList.innerHTML = '';
@@ -109,7 +108,7 @@ async function getUserById() {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`https://digiverse-task.onrender.com/users/${userId}`);
         const user = await response.json();
         const getUserResponse = document.getElementById('getUserResponse');
 
@@ -142,7 +141,7 @@ document.getElementById('updateUserForm').addEventListener('submit', async funct
     const age = document.getElementById('updateAge').value;
 
     try {
-        const response = await fetch(`http://localhost:3000/users/${userId}`, {
+        const response = await fetch(`https://digiverse-task.onrender.com/users/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -169,7 +168,7 @@ async function deleteUser() {
     }
 
     try {
-        const response = await fetch(`http://localhost:3000/users/${userId}`, {
+        const response = await fetch(`https://digiverse-task.onrender.com/users/${userId}`, {
             method: 'DELETE'
         });
         const data = await response.json();
